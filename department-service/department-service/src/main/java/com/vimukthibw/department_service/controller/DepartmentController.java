@@ -30,7 +30,7 @@ public class DepartmentController
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDepartment(@RequestParam Long id){
+    public void deleteDepartment(@RequestParam Long id){//
         departmentRepo.deleteDepartment( id );
     }
 }
