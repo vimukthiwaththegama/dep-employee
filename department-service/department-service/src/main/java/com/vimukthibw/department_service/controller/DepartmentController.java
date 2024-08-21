@@ -25,7 +25,7 @@ public class DepartmentController
     }
 
     @GetMapping
-    public List<DepartmentModel> findAll(){
+    public List<DepartmentModel> findAll(){//
         return departmentRepo.findAll();
     }
 
