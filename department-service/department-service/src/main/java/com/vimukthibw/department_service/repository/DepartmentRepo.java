@@ -20,14 +20,17 @@ public class DepartmentRepo {
     public DepartmentModel findById( Long id )
     {
         return departments.stream().
-                           filter( departmentModel -> departmentModel.getDepId().equals( id ) ).
-                           findFirst().orElseThrow();
+                          filter( departmentModel -> departmentModel.getDepId().equals( id ) ).
+                          findFirst().orElseThrow();
     }
-    public List<DepartmentModel> findAll(){
+
+    public List<DepartmentModel> findAll()
+    {
         return departments;
     }
 
-    public void deleteDepartment(Long id){
+    public void deleteDepartment( Long id )
+    {
         departments.remove( findById( id ) );
     }
 }
