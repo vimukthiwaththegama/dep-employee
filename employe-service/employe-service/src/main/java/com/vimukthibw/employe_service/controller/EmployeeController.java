@@ -37,4 +37,8 @@ public class EmployeeController
     {
         employeeRepository.deleteEmployee( id );
     }
+    @GetMapping("/department/{departmentId}")
+    public List<Employee> findByDepartment(@PathVariable("department")Long departmentId){
+        return employeeRepository.findByDepartment( departmentId );
+    }
 }

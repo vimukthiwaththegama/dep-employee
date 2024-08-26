@@ -1,6 +1,8 @@
 package com.vimukthibw.department_service.controller;
 
+import com.vimukthibw.department_service.client.EmployeeClient;
 import com.vimukthibw.department_service.model.DepartmentModel;
+import com.vimukthibw.department_service.model.Employee;
 import com.vimukthibw.department_service.repository.DepartmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,9 @@ public class DepartmentController
     @Autowired
     private DepartmentRepo departmentRepo;
 
+
+    @Autowired
+    private EmployeeClient employeeClient;
     @PostMapping
     public DepartmentModel addDepartment( @RequestBody DepartmentModel departmentModel )
     {
