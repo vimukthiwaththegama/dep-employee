@@ -2,6 +2,8 @@ package com.vimukthibw.employe_service.repository;
 
 import com.vimukthibw.employe_service.module.Employee;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -33,5 +35,10 @@ public class EmployeeRepository
     public void deleteEmployee( Long id )
     {
         employees.remove( findById( id ) );
+    }
+    public List<Employee> findByDepartment(Long departmentId) {
+        return employees.stream()
+                        .filter(a -> a.getDepartmentId().equals(departmentId))
+                        .toList();
     }
 }
